@@ -44,3 +44,4 @@ Feature: Play the word game
     When the user fails to guess all the words within the time limit
     Then the user should see a "Time's up" message
     And the game should end
+
