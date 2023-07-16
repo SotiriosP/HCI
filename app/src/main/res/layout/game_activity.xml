@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/wordTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/wordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Enter the correct word"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="25dp"
+        android:text="Submit" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="35dp"
+        android:gravity="center"
+        android:checkedButton="@+id/radioButtonA">
+
+        <RadioButton
+            android:id="@+id/radioButtonA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zoom Out"
+            android:textSize="25sp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Zoom In"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroup"
+        android:text="00:00:00"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:textColor="@android:color/holo_blue_light"/>
+
+</LinearLayout>

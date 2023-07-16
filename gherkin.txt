@@ -1,0 +1,46 @@
+Feature: Play the word game
+  As a user
+  I want to guess all the words
+  So that I can win the game
+
+  Scenario: Start new game
+    Given the user opens the app
+    When the user clicks on "New Game" button
+    Then a new game should start
+    And the user should be transferred to the game screen	
+    And the user should see a scrambled word on the screen
+    And the user should see an empty input field
+    And the user should see a "Submit" button
+
+  Scenario: Guess the correct word
+    Given the user sees a scrambled word on the screen
+    And the user sees an empty input field
+    And the user sees a "Submit" button
+    When the user types in the correct word
+    And clicks on the "Submit" button
+    Then the user should see a "Correct" message
+    And the user should see a new scrambled word on the screen
+    And the user should see an empty input field
+
+  Scenario: Guess an incorrect word
+    Given the user sees a scrambled word on the screen
+    And the user sees an empty input field
+    And the user sees a "Submit" button
+    When the user types in an incorrect word
+    And clicks on the "Submit" button
+    Then the user should see a "Try again" message
+    And the user should see the same scrambled word on the screen
+    And the user should see the input field still filled with the incorrect word
+
+  Scenario: Finish the game
+    Given the user has guessed all the words correctly
+    When the user guesses the last word correctly
+    Then the user should see a "You've completed the game" message
+    And the game should end
+
+  Scenario: Time limit
+    Given the user starts a new game
+    And the user has a limited amount of time to guess all the words
+    When the user fails to guess all the words within the time limit
+    Then the user should see a "Time's up" message
+    And the game should end
